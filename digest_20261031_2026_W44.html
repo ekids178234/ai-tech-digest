@@ -476,7 +476,7 @@
 
         <section class="stats-bar">
             <div class="stat-card">
-                <span class="stat-val">3</span>
+                <span class="stat-val">10</span>
                 <span class="stat-label">本期收錄篇數</span>
             </div>
             <div class="stat-card">
@@ -488,11 +488,11 @@
                 <span class="stat-label">工程實踐篇數</span>
             </div>
             <div class="stat-card">
-                <span class="stat-val">1</span>
+                <span class="stat-val">4</span>
                 <span class="stat-label">前沿研究篇數</span>
             </div>
             <div class="stat-card">
-                <span class="stat-val">0</span>
+                <span class="stat-val">4</span>
                 <span class="stat-label">業界應用篇數</span>
             </div>
         </section>
@@ -500,7 +500,7 @@
         <section class="view-tabs-row">
             <div class="view-tabs">
                 <button class="view-tab active" id="tabAll" onclick="setViewMode('all', this)">
-                    🌐 全部情報 (<span id="totalArticlesCount">3</span>)
+                    🌐 全部情報 (<span id="totalArticlesCount">10</span>)
                 </button>
                 <button class="view-tab" id="tabFav" onclick="setViewMode('favorites', this)">
                     ⭐ 我的收藏 (<span id="favCount">0</span>)
@@ -526,87 +526,290 @@
 
         <main class="cards-grid" id="cardsGrid">
             
-            <article class="article-card" id="card-6a2f6d12d2d7" data-id="6a2f6d12d2d7" data-category="基礎模型" data-tags="#大型語言模型 #推論加速 #MCTS #思考鏈 #開源生態" data-text="擴展推論時期運算規模：現代推理模型如何破解複雜數學難題 scaling inference-time compute: how modern reasoners solve complex math 透過思考鏈驗證、蒙地卡羅樹搜尋 (mcts) 與自我校正迴圈，推論端算力擴展展現指數級效益。 在國際數學奧林匹亞與正式形式化推理評測中取得突破性成績，逼近頂尖人類專家水準。 開源社群成功將龐大推論架構蒸餾為輕量化模型，支援在消費級本機硬體上高效部署。">
-                <div class="card-header">
-                    <div class="meta-row">
-                        <span class="category-badge badge-foundation">基礎模型</span>
-                        <span class="stars-badge" title="重要度: 5 星">⭐⭐⭐⭐⭐</span>
-                        <span class="source-tag">Hugging Face Blog · 2026-10-25</span>
-                        <button class="bookmark-btn" id="bm-6a2f6d12d2d7" onclick="toggleBookmark('6a2f6d12d2d7', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
-                            <span class="bookmark-icon">☆</span>
-                        </button>
-                    </div>
-                    <h3 class="card-title-zh">擴展推論時期運算規模：現代推理模型如何破解複雜數學難題</h3>
-                    <div class="card-title-en">Scaling Inference-Time Compute: How Modern Reasoners Solve Complex Math</div>
-                </div>
-                <div class="card-body">
-                    <ul class="summary-list">
-                        <li>透過思考鏈驗證、蒙地卡羅樹搜尋 (MCTS) 與自我校正迴圈，推論端算力擴展展現指數級效益。</li><li>在國際數學奧林匹亞與正式形式化推理評測中取得突破性成績，逼近頂尖人類專家水準。</li><li>開源社群成功將龐大推論架構蒸餾為輕量化模型，支援在消費級本機硬體上高效部署。</li>
-                    </ul>
-                </div>
-                <div class="card-footer">
-                    <div class="tags-group">
-                        <span class="tag-chip" onclick="filterByTag('#大型語言模型')">#大型語言模型</span><span class="tag-chip" onclick="filterByTag('#推論加速')">#推論加速</span><span class="tag-chip" onclick="filterByTag('#MCTS')">#MCTS</span><span class="tag-chip" onclick="filterByTag('#思考鏈')">#思考鏈</span><span class="tag-chip" onclick="filterByTag('#開源生態')">#開源生態</span>
-                    </div>
-                    <a href="https://huggingface.co/blog/scaling-reasoning-models" target="_blank" rel="noopener noreferrer" class="read-link">
-                        閱讀原文 ↗
-                    </a>
-                </div>
-            </article>
-            
-
-            <article class="article-card" id="card-df3508778d93" data-id="df3508778d93" data-category="前沿研究" data-tags="#Mamba #狀態空間模型 #長文本脈絡 #前沿架構 #效能最佳化" data-text="mamba-3 架構發布：結合線性注意力與狀態空間模型實現百萬長文本生成 mamba-3: linear attention meets state space models for long-context synthesis 融合選擇性狀態空間模型 (ssm) 與分塊線性注意力機制，突破長序列記憶體瓶頸。 在百萬 token 脈絡長度下維持恆定推論記憶體開銷，運算吞吐速度較傳統自我注意力提升 10 倍。 於「大海撈針」等高難度長文本擷取基準測試中達成零精準度損失的極致穩定性。">
+            <article class="article-card" id="card-08741de3d7ea" data-id="08741de3d7ea" data-category="前沿研究" data-tags="#AI安全 #聊天機器人 #科技虐待" data-text="ai 聊天機器人回應科技虐待提問，86% 有問題 ai 聊天機器人回應科技虐待提問 86% 有問題，換個說法甚至轉成協助跟蹤者 遭跟蹤或控制的受害者向 ai 聊天機器人求助，得到的建議可能不但無效，甚至更危險 報導指出，換個說法提問，聊天機器人甚至可能轉為協助跟蹤者 研究來自美國紐約大學坦登工程學院（原文摘要僅提供至此）">
                 <div class="card-header">
                     <div class="meta-row">
                         <span class="category-badge badge-research">前沿研究</span>
-                        <span class="stars-badge" title="重要度: 5 星">⭐⭐⭐⭐⭐</span>
-                        <span class="source-tag">ArXiv AI · 2026-10-26</span>
-                        <button class="bookmark-btn" id="bm-df3508778d93" onclick="toggleBookmark('df3508778d93', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                        <span class="stars-badge" title="重要度: 4 星">⭐⭐⭐⭐</span>
+                        <span class="source-tag">TechNews 科技新報 · 2026-10-31</span>
+                        <button class="bookmark-btn" id="bm-08741de3d7ea" onclick="toggleBookmark('08741de3d7ea', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
                             <span class="bookmark-icon">☆</span>
                         </button>
                     </div>
-                    <h3 class="card-title-zh">Mamba-3 架構發布：結合線性注意力與狀態空間模型實現百萬長文本生成</h3>
-                    <div class="card-title-en">Mamba-3: Linear Attention meets State Space Models for Long-Context Synthesis</div>
+                    <h3 class="card-title-zh">AI 聊天機器人回應科技虐待提問，86% 有問題</h3>
+                    <div class="card-title-en">AI 聊天機器人回應科技虐待提問 86% 有問題，換個說法甚至轉成協助跟蹤者</div>
                 </div>
                 <div class="card-body">
                     <ul class="summary-list">
-                        <li>融合選擇性狀態空間模型 (SSM) 與分塊線性注意力機制，突破長序列記憶體瓶頸。</li><li>在百萬 Token 脈絡長度下維持恆定推論記憶體開銷，運算吞吐速度較傳統自我注意力提升 10 倍。</li><li>於「大海撈針」等高難度長文本擷取基準測試中達成零精準度損失的極致穩定性。</li>
+                        <li>遭跟蹤或控制的受害者向 AI 聊天機器人求助，得到的建議可能不但無效，甚至更危險</li><li>報導指出，換個說法提問，聊天機器人甚至可能轉為協助跟蹤者</li><li>研究來自美國紐約大學坦登工程學院（原文摘要僅提供至此）</li>
                     </ul>
                 </div>
                 <div class="card-footer">
                     <div class="tags-group">
-                        <span class="tag-chip" onclick="filterByTag('#Mamba')">#Mamba</span><span class="tag-chip" onclick="filterByTag('#狀態空間模型')">#狀態空間模型</span><span class="tag-chip" onclick="filterByTag('#長文本脈絡')">#長文本脈絡</span><span class="tag-chip" onclick="filterByTag('#前沿架構')">#前沿架構</span><span class="tag-chip" onclick="filterByTag('#效能最佳化')">#效能最佳化</span>
+                        <span class="tag-chip" onclick="filterByTag('#AI安全')">#AI安全</span><span class="tag-chip" onclick="filterByTag('#聊天機器人')">#聊天機器人</span><span class="tag-chip" onclick="filterByTag('#科技虐待')">#科技虐待</span>
                     </div>
-                    <a href="https://arxiv.org/abs/2610.12345" target="_blank" rel="noopener noreferrer" class="read-link">
+                    <a href="https://infosecu.technews.tw/2026/10/31/ai-chatbots-are-falling-prey-to-manipulative-prompts-that-could-help-stalkers-spy-on-victims/" target="_blank" rel="noopener noreferrer" class="read-link">
                         閱讀原文 ↗
                     </a>
                 </div>
             </article>
             
 
-            <article class="article-card" id="card-df7226da8e9d" data-id="df7226da8e9d" data-category="工程實踐" data-tags="#自主代理人 #多代理協作 #軟體工程 #CI_CD #工程實踐" data-text="正式環境中的自主軟體工程代理人：多代理協同架構與實踐模式 autonomous coding agents in production: patterns for multi-agent collaboration 提出專為企業級 ci/cd 開發流程打造的彈性通訊協定與安全沙盒隔離執行環境。 透過產品經理 (pm)、架構師、開發者與品管 (qa) 的清晰分工大幅提升複雜任務交付成功率。 建立確定性自動化驗收閘門，在無人為干預的前提下實現高品質自動化修復與產出。">
+            <article class="article-card" id="card-e2242fd6e87a" data-id="e2242fd6e87a" data-category="業界應用" data-tags="#AI資料中心 #電力 #GMICloud" data-text="gmi cloud 展示桃園 ai factory，電力成資料中心新瓶頸 gmi cloud展示在臺ai factory設計，ai資料中心的新瓶頸不是機櫃，而是電力 gmi cloud 於 10/30 對外展示位於桃園的 ai factory，第一期區域保留不少空間，未被設備填滿 傳統機房追求空間利用率、機櫃排列緊密，與此設計不同 限制 ai factory 擴充的不是空間或算力需求，而是電力">
                 <div class="card-header">
                     <div class="meta-row">
-                        <span class="category-badge badge-engineering">工程實踐</span>
+                        <span class="category-badge badge-industry">業界應用</span>
                         <span class="stars-badge" title="重要度: 4 星">⭐⭐⭐⭐</span>
-                        <span class="source-tag">Google AI Blog · 2026-10-27</span>
-                        <button class="bookmark-btn" id="bm-df7226da8e9d" onclick="toggleBookmark('df7226da8e9d', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                        <span class="source-tag">iThome 電腦報 · 2026-10-30</span>
+                        <button class="bookmark-btn" id="bm-e2242fd6e87a" onclick="toggleBookmark('e2242fd6e87a', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
                             <span class="bookmark-icon">☆</span>
                         </button>
                     </div>
-                    <h3 class="card-title-zh">正式環境中的自主軟體工程代理人：多代理協同架構與實踐模式</h3>
-                    <div class="card-title-en">Autonomous Coding Agents in Production: Patterns for Multi-Agent Collaboration</div>
+                    <h3 class="card-title-zh">GMI Cloud 展示桃園 AI Factory，電力成資料中心新瓶頸</h3>
+                    <div class="card-title-en">GMI Cloud展示在臺AI Factory設計，AI資料中心的新瓶頸不是機櫃，而是電力</div>
                 </div>
                 <div class="card-body">
                     <ul class="summary-list">
-                        <li>提出專為企業級 CI/CD 開發流程打造的彈性通訊協定與安全沙盒隔離執行環境。</li><li>透過產品經理 (PM)、架構師、開發者與品管 (QA) 的清晰分工大幅提升複雜任務交付成功率。</li><li>建立確定性自動化驗收閘門，在無人為干預的前提下實現高品質自動化修復與產出。</li>
+                        <li>GMI Cloud 於 10/30 對外展示位於桃園的 AI Factory，第一期區域保留不少空間，未被設備填滿</li><li>傳統機房追求空間利用率、機櫃排列緊密，與此設計不同</li><li>限制 AI Factory 擴充的不是空間或算力需求，而是電力</li>
                     </ul>
                 </div>
                 <div class="card-footer">
                     <div class="tags-group">
-                        <span class="tag-chip" onclick="filterByTag('#自主代理人')">#自主代理人</span><span class="tag-chip" onclick="filterByTag('#多代理協作')">#多代理協作</span><span class="tag-chip" onclick="filterByTag('#軟體工程')">#軟體工程</span><span class="tag-chip" onclick="filterByTag('#CI_CD')">#CI_CD</span><span class="tag-chip" onclick="filterByTag('#工程實踐')">#工程實踐</span>
+                        <span class="tag-chip" onclick="filterByTag('#AI資料中心')">#AI資料中心</span><span class="tag-chip" onclick="filterByTag('#電力')">#電力</span><span class="tag-chip" onclick="filterByTag('#GMICloud')">#GMICloud</span>
                     </div>
-                    <a href="https://blog.google/technology/ai/gemini-autonomous-agents-architecture" target="_blank" rel="noopener noreferrer" class="read-link">
+                    <a href="https://www.ithome.com.tw/news/180116" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+
+            <article class="article-card" id="card-037154e824aa" data-id="037154e824aa" data-category="基礎模型" data-tags="#HuggingFace #Nemotron" data-text="nemotron-halloween nemotron-halloween 原文僅提供標題，無內文摘要，無法進一步提煉細節">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-foundation">基礎模型</span>
+                        <span class="stars-badge" title="重要度: 1 星">⭐</span>
+                        <span class="source-tag">Hugging Face Blog · 2026-10-30</span>
+                        <button class="bookmark-btn" id="bm-037154e824aa" onclick="toggleBookmark('037154e824aa', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">nemotron-halloween</h3>
+                    <div class="card-title-en">nemotron-halloween</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>原文僅提供標題，無內文摘要，無法進一步提煉細節</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#HuggingFace')">#HuggingFace</span><span class="tag-chip" onclick="filterByTag('#Nemotron')">#Nemotron</span>
+                    </div>
+                    <a href="https://huggingface.co/blog/nvidia/nemotron-halloween" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+
+            <article class="article-card" id="card-2e338f4975c6" data-id="2e338f4975c6" data-category="前沿研究" data-tags="#MoE #模型訓練 #GPU記憶體" data-text="lrmoe：針對記憶體受限節點的高效 moe 訓練負載重新校準 lrmoe: demand-side load re-calibration for efficient moe training on memory-constrained nodes 稀疏 moe 模型的路由不均會造成運算與通訊瓶頸；既有放置與複製方法所增加的專家副本，會與 token 相關緩衝區競爭有限的 gpu 記憶體 lrmoe 是具記憶體感知的 moe 訓練系統：前向階段在資源限制下規劃保留配額與專家放置，反向傳播時以負載重新校準指標挑選 token-專家配對，並透過容量感知路由與實體壓縮縮減通訊量、運算與執行緩衝需求 在 qwen3-30b-a3b 與 glm4.5-106b-a12b 上，達到固定損失目標的累計 moe 層訓練時間相較 symi 減少 21.2-44.8%">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-research">前沿研究</span>
+                        <span class="stars-badge" title="重要度: 4 星">⭐⭐⭐⭐</span>
+                        <span class="source-tag">ArXiv cs.AI · 2026-10-31</span>
+                        <button class="bookmark-btn" id="bm-2e338f4975c6" onclick="toggleBookmark('2e338f4975c6', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">LRMoE：針對記憶體受限節點的高效 MoE 訓練負載重新校準</h3>
+                    <div class="card-title-en">LRMoE: Demand-Side Load Re-Calibration for Efficient MoE Training on Memory-Constrained Nodes</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>稀疏 MoE 模型的路由不均會造成運算與通訊瓶頸；既有放置與複製方法所增加的專家副本，會與 token 相關緩衝區競爭有限的 GPU 記憶體</li><li>LRMoE 是具記憶體感知的 MoE 訓練系統：前向階段在資源限制下規劃保留配額與專家放置，反向傳播時以負載重新校準指標挑選 token-專家配對，並透過容量感知路由與實體壓縮縮減通訊量、運算與執行緩衝需求</li><li>在 Qwen3-30B-A3B 與 GLM4.5-106B-A12B 上，達到固定損失目標的累計 MoE 層訓練時間相較 SYMI 減少 21.2-44.8%</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#MoE')">#MoE</span><span class="tag-chip" onclick="filterByTag('#模型訓練')">#模型訓練</span><span class="tag-chip" onclick="filterByTag('#GPU記憶體')">#GPU記憶體</span>
+                    </div>
+                    <a href="https://arxiv.org/abs/2610.37720" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+
+            <article class="article-card" id="card-b1d7eb2dedce" data-id="b1d7eb2dedce" data-category="前沿研究" data-tags="#Google #AIQuests #腦科學" data-text="google 推出新 ai quest：繪製人類大腦圖譜 our newest ai quest: mapping the human brain google ai 部落格發布最新 ai quests 主題，聚焦繪製人類大腦 原文僅提供標題與插圖說明，無更多細節">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-research">前沿研究</span>
+                        <span class="stars-badge" title="重要度: 2 星">⭐⭐</span>
+                        <span class="source-tag">Google AI Blog · 2026-10-26</span>
+                        <button class="bookmark-btn" id="bm-b1d7eb2dedce" onclick="toggleBookmark('b1d7eb2dedce', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">Google 推出新 AI Quest：繪製人類大腦圖譜</h3>
+                    <div class="card-title-en">Our newest AI Quest: Mapping the human brain</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>Google AI 部落格發布最新 AI Quests 主題，聚焦繪製人類大腦</li><li>原文僅提供標題與插圖說明，無更多細節</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#Google')">#Google</span><span class="tag-chip" onclick="filterByTag('#AIQuests')">#AIQuests</span><span class="tag-chip" onclick="filterByTag('#腦科學')">#腦科學</span>
+                    </div>
+                    <a href="https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+
+            <article class="article-card" id="card-d14bc5bc4cda" data-id="d14bc5bc4cda" data-category="業界應用" data-tags="#SpaceX #特斯拉 #併購" data-text="spacex 與特斯拉研議合併，馬斯克需跨越兩大高牆 「在地雷區跳舞」的世紀交易：spacex 合併特斯拉，馬斯克必須跨越的兩大高牆 spacex 與特斯拉證實已各自成立特別委員會，研議合併 若成真，市值合計約 3.5 兆美元，將是史上最大合併案 標題指出馬斯克必須跨越兩大高牆（原文摘要未說明細節）">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-industry">業界應用</span>
+                        <span class="stars-badge" title="重要度: 3 星">⭐⭐⭐</span>
+                        <span class="source-tag">TechNews 科技新報 · 2026-10-31</span>
+                        <button class="bookmark-btn" id="bm-d14bc5bc4cda" onclick="toggleBookmark('d14bc5bc4cda', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">SpaceX 與特斯拉研議合併，馬斯克需跨越兩大高牆</h3>
+                    <div class="card-title-en">「在地雷區跳舞」的世紀交易：SpaceX 合併特斯拉，馬斯克必須跨越的兩大高牆</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>SpaceX 與特斯拉證實已各自成立特別委員會，研議合併</li><li>若成真，市值合計約 3.5 兆美元，將是史上最大合併案</li><li>標題指出馬斯克必須跨越兩大高牆（原文摘要未說明細節）</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#SpaceX')">#SpaceX</span><span class="tag-chip" onclick="filterByTag('#特斯拉')">#特斯拉</span><span class="tag-chip" onclick="filterByTag('#併購')">#併購</span>
+                    </div>
+                    <a href="https://finance.technews.tw/2026/10/31/spacex-tesla-merger-largest-earth-who-benefits-who-pays/" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+
+            <article class="article-card" id="card-a4bb71e01677" data-id="a4bb71e01677" data-category="業界應用" data-tags="#智慧醫療 #代理型AI #資料治理" data-text="奇美醫院揭 ai 發展四階段，從 ai 伴行邁向代理型 ai 從ai伴行到ai優先，奇美醫院揭ai發展4階段布局 院長林宏榮於臺灣醫院資訊主管會議揭露路徑：2005 年基礎數位化、2019 年成立 ai 中心、2023 年投入生成式 ai 進入 ai 伴行階段、2025 年至今瞄準代理型 ai ai 伴行階段將 ai 視為醫護工作助手，打造 a+ 巡房大聯盟與 a+ his copilot 助手（如 a+ 藥安師），協助整理病歷、提醒注意事項與跨職類同步病人資訊 ai 代理尚未正式上線，因安全執行環境未就緒；須先做好資料治理並建置安全沙盒環境">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-industry">業界應用</span>
+                        <span class="stars-badge" title="重要度: 4 星">⭐⭐⭐⭐</span>
+                        <span class="source-tag">iThome 電腦報 · 2026-10-30</span>
+                        <button class="bookmark-btn" id="bm-a4bb71e01677" onclick="toggleBookmark('a4bb71e01677', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">奇美醫院揭 AI 發展四階段，從 AI 伴行邁向代理型 AI</h3>
+                    <div class="card-title-en">從AI伴行到AI優先，奇美醫院揭AI發展4階段布局</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>院長林宏榮於臺灣醫院資訊主管會議揭露路徑：2005 年基礎數位化、2019 年成立 AI 中心、2023 年投入生成式 AI 進入 AI 伴行階段、2025 年至今瞄準代理型 AI</li><li>AI 伴行階段將 AI 視為醫護工作助手，打造 A+ 巡房大聯盟與 A+ HIS Copilot 助手（如 A+ 藥安師），協助整理病歷、提醒注意事項與跨職類同步病人資訊</li><li>AI 代理尚未正式上線，因安全執行環境未就緒；須先做好資料治理並建置安全沙盒環境</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#智慧醫療')">#智慧醫療</span><span class="tag-chip" onclick="filterByTag('#代理型AI')">#代理型AI</span><span class="tag-chip" onclick="filterByTag('#資料治理')">#資料治理</span>
+                    </div>
+                    <a href="https://www.ithome.com.tw/news/180107" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+
+            <article class="article-card" id="card-e508e29ae812" data-id="e508e29ae812" data-category="工程實踐" data-tags="#HuggingFace #Granite #模型更新" data-text="granite switch 4.1.1：像更新軟體一樣更新模型 granite switch 4.1.1 — update models like you update software hugging face 部落格文章，標題主張以更新軟體的方式更新模型 原文無內文摘要，無法提供更多細節">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-engineering">工程實踐</span>
+                        <span class="stars-badge" title="重要度: 2 星">⭐⭐</span>
+                        <span class="source-tag">Hugging Face Blog · 2026-10-29</span>
+                        <button class="bookmark-btn" id="bm-e508e29ae812" onclick="toggleBookmark('e508e29ae812', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">Granite Switch 4.1.1：像更新軟體一樣更新模型</h3>
+                    <div class="card-title-en">Granite Switch 4.1.1 — Update models like you update software</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>Hugging Face 部落格文章，標題主張以更新軟體的方式更新模型</li><li>原文無內文摘要，無法提供更多細節</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#HuggingFace')">#HuggingFace</span><span class="tag-chip" onclick="filterByTag('#Granite')">#Granite</span><span class="tag-chip" onclick="filterByTag('#模型更新')">#模型更新</span>
+                    </div>
+                    <a href="https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+
+            <article class="article-card" id="card-17c024935e19" data-id="17c024935e19" data-category="前沿研究" data-tags="#模型校準 #變分推論 #海洋模型" data-text="攤銷式局部後驗推論用於模型校準，並應用於海洋亂流閉合 amortized localized posterior inference for model calibration with application to an ocean turbulence closure 模型差異可能使單一校準參數無法在整個情境域重現物理響應；研究依與目標情境的接近程度加權觀測概似，建構局部後驗族，並以條件正規化流透過攤銷變分推論近似 在 branin-hoo 模型的孿生實驗中，局部化推論相較全域後驗降低了所報告的整體預測誤差 應用於單柱海洋模型的 k-ε 亂流閉合時，局部後驗校準相較確定性與全域後驗校準降低了溫度與緯向流速誤差；兩項孿生實驗皆設計為允許局部補償">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-research">前沿研究</span>
+                        <span class="stars-badge" title="重要度: 3 星">⭐⭐⭐</span>
+                        <span class="source-tag">ArXiv cs.AI · 2026-10-31</span>
+                        <button class="bookmark-btn" id="bm-17c024935e19" onclick="toggleBookmark('17c024935e19', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">攤銷式局部後驗推論用於模型校準，並應用於海洋亂流閉合</h3>
+                    <div class="card-title-en">Amortized Localized Posterior Inference for Model Calibration with Application to an Ocean Turbulence Closure</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>模型差異可能使單一校準參數無法在整個情境域重現物理響應；研究依與目標情境的接近程度加權觀測概似，建構局部後驗族，並以條件正規化流透過攤銷變分推論近似</li><li>在 Branin-Hoo 模型的孿生實驗中，局部化推論相較全域後驗降低了所報告的整體預測誤差</li><li>應用於單柱海洋模型的 k-ε 亂流閉合時，局部後驗校準相較確定性與全域後驗校準降低了溫度與緯向流速誤差；兩項孿生實驗皆設計為允許局部補償</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#模型校準')">#模型校準</span><span class="tag-chip" onclick="filterByTag('#變分推論')">#變分推論</span><span class="tag-chip" onclick="filterByTag('#海洋模型')">#海洋模型</span>
+                    </div>
+                    <a href="https://arxiv.org/abs/2610.37731" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+
+            <article class="article-card" id="card-c7c1db1d24f9" data-id="c7c1db1d24f9" data-category="業界應用" data-tags="#東南亞 #數位經濟 #eConomySEA" data-text="東南亞數位經濟將達 3,680 億美元 southeast asia’s digital economy to hit $368 billion 標題指出東南亞數位經濟將達 3,680 億美元 相關內容為 google、temasek 與 bain and company 的 e-conomy sea 2026 報告，主題為「building the intelligent economy」 原文僅提供標題與封面圖說明，無更多細節">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-industry">業界應用</span>
+                        <span class="stars-badge" title="重要度: 3 星">⭐⭐⭐</span>
+                        <span class="source-tag">Google AI Blog · 2026-10-21</span>
+                        <button class="bookmark-btn" id="bm-c7c1db1d24f9" onclick="toggleBookmark('c7c1db1d24f9', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">東南亞數位經濟將達 3,680 億美元</h3>
+                    <div class="card-title-en">Southeast Asia’s digital economy to hit $368 billion</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>標題指出東南亞數位經濟將達 3,680 億美元</li><li>相關內容為 Google、Temasek 與 Bain and Company 的 e-Conomy SEA 2026 報告，主題為「Building the intelligent economy」</li><li>原文僅提供標題與封面圖說明，無更多細節</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#東南亞')">#東南亞</span><span class="tag-chip" onclick="filterByTag('#數位經濟')">#數位經濟</span><span class="tag-chip" onclick="filterByTag('#eConomySEA')">#eConomySEA</span>
+                    </div>
+                    <a href="https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/" target="_blank" rel="noopener noreferrer" class="read-link">
                         閱讀原文 ↗
                     </a>
                 </div>
@@ -628,7 +831,7 @@
     </div>
 
     <script>
-        const __RAW_ARTICLES__ = [{"id": "6a2f6d12d2d7", "title": "Scaling Inference-Time Compute: How Modern Reasoners Solve Complex Math", "title_zh_tw": "擴展推論時期運算規模：現代推理模型如何破解複雜數學難題", "url": "https://huggingface.co/blog/scaling-reasoning-models", "source": "Hugging Face Blog", "published_at": "2026-10-25", "summary_points": ["透過思考鏈驗證、蒙地卡羅樹搜尋 (MCTS) 與自我校正迴圈，推論端算力擴展展現指數級效益。", "在國際數學奧林匹亞與正式形式化推理評測中取得突破性成績，逼近頂尖人類專家水準。", "開源社群成功將龐大推論架構蒸餾為輕量化模型，支援在消費級本機硬體上高效部署。"], "tags": ["#大型語言模型", "#推論加速", "#MCTS", "#思考鏈", "#開源生態"], "category": "基礎模型", "stars": 5, "stars_display": "⭐⭐⭐⭐⭐"}, {"id": "df3508778d93", "title": "Mamba-3: Linear Attention meets State Space Models for Long-Context Synthesis", "title_zh_tw": "Mamba-3 架構發布：結合線性注意力與狀態空間模型實現百萬長文本生成", "url": "https://arxiv.org/abs/2610.12345", "source": "ArXiv AI", "published_at": "2026-10-26", "summary_points": ["融合選擇性狀態空間模型 (SSM) 與分塊線性注意力機制，突破長序列記憶體瓶頸。", "在百萬 Token 脈絡長度下維持恆定推論記憶體開銷，運算吞吐速度較傳統自我注意力提升 10 倍。", "於「大海撈針」等高難度長文本擷取基準測試中達成零精準度損失的極致穩定性。"], "tags": ["#Mamba", "#狀態空間模型", "#長文本脈絡", "#前沿架構", "#效能最佳化"], "category": "前沿研究", "stars": 5, "stars_display": "⭐⭐⭐⭐⭐"}, {"id": "df7226da8e9d", "title": "Autonomous Coding Agents in Production: Patterns for Multi-Agent Collaboration", "title_zh_tw": "正式環境中的自主軟體工程代理人：多代理協同架構與實踐模式", "url": "https://blog.google/technology/ai/gemini-autonomous-agents-architecture", "source": "Google AI Blog", "published_at": "2026-10-27", "summary_points": ["提出專為企業級 CI/CD 開發流程打造的彈性通訊協定與安全沙盒隔離執行環境。", "透過產品經理 (PM)、架構師、開發者與品管 (QA) 的清晰分工大幅提升複雜任務交付成功率。", "建立確定性自動化驗收閘門，在無人為干預的前提下實現高品質自動化修復與產出。"], "tags": ["#自主代理人", "#多代理協作", "#軟體工程", "#CI_CD", "#工程實踐"], "category": "工程實踐", "stars": 4, "stars_display": "⭐⭐⭐⭐"}];
+        const __RAW_ARTICLES__ = [{"id": "08741de3d7ea", "title": "AI 聊天機器人回應科技虐待提問 86% 有問題，換個說法甚至轉成協助跟蹤者", "title_zh_tw": "AI 聊天機器人回應科技虐待提問，86% 有問題", "url": "https://infosecu.technews.tw/2026/10/31/ai-chatbots-are-falling-prey-to-manipulative-prompts-that-could-help-stalkers-spy-on-victims/", "source": "TechNews 科技新報", "published_at": "2026-10-31", "summary_points": ["遭跟蹤或控制的受害者向 AI 聊天機器人求助，得到的建議可能不但無效，甚至更危險", "報導指出，換個說法提問，聊天機器人甚至可能轉為協助跟蹤者", "研究來自美國紐約大學坦登工程學院（原文摘要僅提供至此）"], "tags": ["#AI安全", "#聊天機器人", "#科技虐待"], "category": "前沿研究", "stars": 4, "stars_display": "⭐⭐⭐⭐"}, {"id": "e2242fd6e87a", "title": "GMI Cloud展示在臺AI Factory設計，AI資料中心的新瓶頸不是機櫃，而是電力", "title_zh_tw": "GMI Cloud 展示桃園 AI Factory，電力成資料中心新瓶頸", "url": "https://www.ithome.com.tw/news/180116", "source": "iThome 電腦報", "published_at": "2026-10-30", "summary_points": ["GMI Cloud 於 10/30 對外展示位於桃園的 AI Factory，第一期區域保留不少空間，未被設備填滿", "傳統機房追求空間利用率、機櫃排列緊密，與此設計不同", "限制 AI Factory 擴充的不是空間或算力需求，而是電力"], "tags": ["#AI資料中心", "#電力", "#GMICloud"], "category": "業界應用", "stars": 4, "stars_display": "⭐⭐⭐⭐"}, {"id": "037154e824aa", "title": "nemotron-halloween", "title_zh_tw": "nemotron-halloween", "url": "https://huggingface.co/blog/nvidia/nemotron-halloween", "source": "Hugging Face Blog", "published_at": "2026-10-30", "summary_points": ["原文僅提供標題，無內文摘要，無法進一步提煉細節"], "tags": ["#HuggingFace", "#Nemotron"], "category": "基礎模型", "stars": 1, "stars_display": "⭐"}, {"id": "2e338f4975c6", "title": "LRMoE: Demand-Side Load Re-Calibration for Efficient MoE Training on Memory-Constrained Nodes", "title_zh_tw": "LRMoE：針對記憶體受限節點的高效 MoE 訓練負載重新校準", "url": "https://arxiv.org/abs/2610.37720", "source": "ArXiv cs.AI", "published_at": "2026-10-31", "summary_points": ["稀疏 MoE 模型的路由不均會造成運算與通訊瓶頸；既有放置與複製方法所增加的專家副本，會與 token 相關緩衝區競爭有限的 GPU 記憶體", "LRMoE 是具記憶體感知的 MoE 訓練系統：前向階段在資源限制下規劃保留配額與專家放置，反向傳播時以負載重新校準指標挑選 token-專家配對，並透過容量感知路由與實體壓縮縮減通訊量、運算與執行緩衝需求", "在 Qwen3-30B-A3B 與 GLM4.5-106B-A12B 上，達到固定損失目標的累計 MoE 層訓練時間相較 SYMI 減少 21.2-44.8%"], "tags": ["#MoE", "#模型訓練", "#GPU記憶體"], "category": "前沿研究", "stars": 4, "stars_display": "⭐⭐⭐⭐"}, {"id": "b1d7eb2dedce", "title": "Our newest AI Quest: Mapping the human brain", "title_zh_tw": "Google 推出新 AI Quest：繪製人類大腦圖譜", "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/", "source": "Google AI Blog", "published_at": "2026-10-26", "summary_points": ["Google AI 部落格發布最新 AI Quests 主題，聚焦繪製人類大腦", "原文僅提供標題與插圖說明，無更多細節"], "tags": ["#Google", "#AIQuests", "#腦科學"], "category": "前沿研究", "stars": 2, "stars_display": "⭐⭐"}, {"id": "d14bc5bc4cda", "title": "「在地雷區跳舞」的世紀交易：SpaceX 合併特斯拉，馬斯克必須跨越的兩大高牆", "title_zh_tw": "SpaceX 與特斯拉研議合併，馬斯克需跨越兩大高牆", "url": "https://finance.technews.tw/2026/10/31/spacex-tesla-merger-largest-earth-who-benefits-who-pays/", "source": "TechNews 科技新報", "published_at": "2026-10-31", "summary_points": ["SpaceX 與特斯拉證實已各自成立特別委員會，研議合併", "若成真，市值合計約 3.5 兆美元，將是史上最大合併案", "標題指出馬斯克必須跨越兩大高牆（原文摘要未說明細節）"], "tags": ["#SpaceX", "#特斯拉", "#併購"], "category": "業界應用", "stars": 3, "stars_display": "⭐⭐⭐"}, {"id": "a4bb71e01677", "title": "從AI伴行到AI優先，奇美醫院揭AI發展4階段布局", "title_zh_tw": "奇美醫院揭 AI 發展四階段，從 AI 伴行邁向代理型 AI", "url": "https://www.ithome.com.tw/news/180107", "source": "iThome 電腦報", "published_at": "2026-10-30", "summary_points": ["院長林宏榮於臺灣醫院資訊主管會議揭露路徑：2005 年基礎數位化、2019 年成立 AI 中心、2023 年投入生成式 AI 進入 AI 伴行階段、2025 年至今瞄準代理型 AI", "AI 伴行階段將 AI 視為醫護工作助手，打造 A+ 巡房大聯盟與 A+ HIS Copilot 助手（如 A+ 藥安師），協助整理病歷、提醒注意事項與跨職類同步病人資訊", "AI 代理尚未正式上線，因安全執行環境未就緒；須先做好資料治理並建置安全沙盒環境"], "tags": ["#智慧醫療", "#代理型AI", "#資料治理"], "category": "業界應用", "stars": 4, "stars_display": "⭐⭐⭐⭐"}, {"id": "e508e29ae812", "title": "Granite Switch 4.1.1 — Update models like you update software", "title_zh_tw": "Granite Switch 4.1.1：像更新軟體一樣更新模型", "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1-1", "source": "Hugging Face Blog", "published_at": "2026-10-29", "summary_points": ["Hugging Face 部落格文章，標題主張以更新軟體的方式更新模型", "原文無內文摘要，無法提供更多細節"], "tags": ["#HuggingFace", "#Granite", "#模型更新"], "category": "工程實踐", "stars": 2, "stars_display": "⭐⭐"}, {"id": "17c024935e19", "title": "Amortized Localized Posterior Inference for Model Calibration with Application to an Ocean Turbulence Closure", "title_zh_tw": "攤銷式局部後驗推論用於模型校準，並應用於海洋亂流閉合", "url": "https://arxiv.org/abs/2610.37731", "source": "ArXiv cs.AI", "published_at": "2026-10-31", "summary_points": ["模型差異可能使單一校準參數無法在整個情境域重現物理響應；研究依與目標情境的接近程度加權觀測概似，建構局部後驗族，並以條件正規化流透過攤銷變分推論近似", "在 Branin-Hoo 模型的孿生實驗中，局部化推論相較全域後驗降低了所報告的整體預測誤差", "應用於單柱海洋模型的 k-ε 亂流閉合時，局部後驗校準相較確定性與全域後驗校準降低了溫度與緯向流速誤差；兩項孿生實驗皆設計為允許局部補償"], "tags": ["#模型校準", "#變分推論", "#海洋模型"], "category": "前沿研究", "stars": 3, "stars_display": "⭐⭐⭐"}, {"id": "c7c1db1d24f9", "title": "Southeast Asia’s digital economy to hit $368 billion", "title_zh_tw": "東南亞數位經濟將達 3,680 億美元", "url": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/", "source": "Google AI Blog", "published_at": "2026-10-21", "summary_points": ["標題指出東南亞數位經濟將達 3,680 億美元", "相關內容為 Google、Temasek 與 Bain and Company 的 e-Conomy SEA 2026 報告，主題為「Building the intelligent economy」", "原文僅提供標題與封面圖說明，無更多細節"], "tags": ["#東南亞", "#數位經濟", "#eConomySEA"], "category": "業界應用", "stars": 3, "stars_display": "⭐⭐⭐"}];
         const STORAGE_KEY = 'digest_favorites_v1';
         let currentCategory = 'all';
         let currentViewMode = 'all'; // 'all' or 'favorites'
