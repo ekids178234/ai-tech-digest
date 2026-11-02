@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 技術情報與趨勢週報 - 2026-W45</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --surface-color: #161b22;
+            --surface-hover: #1f242c;
+            --border-color: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --text-muted: #6e7681;
+            --accent-primary: #58a6ff;
+            --accent-gradient: linear-gradient(135deg, #1f6feb, #388bfd);
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --badge-foundation-bg: rgba(56, 139, 253, 0.15);
+            --badge-foundation-text: #58a6ff;
+            --badge-engineering-bg: rgba(63, 185, 80, 0.15);
+            --badge-engineering-text: #3fb950;
+            --badge-research-bg: rgba(163, 113, 247, 0.15);
+            --badge-research-text: #bc8cff;
+            --badge-industry-bg: rgba(210, 153, 34, 0.15);
+            --badge-industry-text: #d29922;
+            --transition-speed: 0.25s;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #f6f8fa;
+            --surface-color: #ffffff;
+            --surface-hover: #f3f4f6;
+            --border-color: #d0d7de;
+            --text-primary: #1f2328;
+            --text-secondary: #57606a;
+            --text-muted: #6e7781;
+            --accent-primary: #0969da;
+            --accent-gradient: linear-gradient(135deg, #0969da, #218bff);
+            --card-shadow: 0 4px 20px rgba(140, 149, 159, 0.15);
+            --badge-foundation-bg: #ddf4ff;
+            --badge-foundation-text: #0969da;
+            --badge-engineering-bg: #dafbe1;
+            --badge-engineering-text: #1a7f37;
+            --badge-research-bg: #fbefff;
+            --badge-research-text: #8250df;
+            --badge-industry-bg: #fff8c5;
+            --badge-industry-text: #9a6700;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color var(--transition-speed), color var(--transition-speed), border-color var(--transition-speed);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .brand-title {
+            font-size: 1.85rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-sub {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        .theme-btn {
+            background: var(--surface-color);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        .theme-btn:hover {
+            background: var(--surface-hover);
+        }
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .stat-val {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--accent-primary);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .controls-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 280px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            background: var(--surface-color);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            outline: none;
+        }
+        .search-input:focus {
+            border-color: var(--accent-primary);
+        }
+
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-chip {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 0.45rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .filter-chip.active, .filter-chip:hover {
+            background: var(--accent-primary);
+            color: #ffffff;
+            border-color: var(--accent-primary);
+        }
+
+        /* 智慧書籤收藏夾與精選視圖 Tab 樣式 */
+        .view-tabs-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .view-tabs {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--surface-color);
+            padding: 0.35rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .view-tab {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 7px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .view-tab.active {
+            background: var(--accent-primary);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(56, 189, 248, 0.25);
+        }
+
+        .export-fav-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            border: none;
+            padding: 0.55rem 1.15rem;
+            border-radius: 9px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .export-fav-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .bookmark-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            width: 32px;
+            height: 32px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-muted);
+            margin-left: auto;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            outline: none;
+        }
+        .bookmark-btn:hover {
+            border-color: #f59e0b;
+            color: #f59e0b;
+            transform: scale(1.1);
+        }
+        .bookmark-btn.active {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: #f59e0b;
+            color: #f59e0b;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.35);
+        }
+        .bookmark-btn.active .bookmark-icon {
+            transform: scale(1.15);
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1e293b;
+            color: #f8fafc;
+            border: 1px solid #38bdf8;
+            padding: 0.85rem 1.4rem;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 9999;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.25s ease;
+            pointer-events: none;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .article-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-primary);
+        }
+
+        .meta-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+        .badge-foundation { background: var(--badge-foundation-bg); color: var(--badge-foundation-text); }
+        .badge-engineering { background: var(--badge-engineering-bg); color: var(--badge-engineering-text); }
+        .badge-research { background: var(--badge-research-bg); color: var(--badge-research-text); }
+        .badge-industry { background: var(--badge-industry-bg); color: var(--badge-industry-text); }
+
+        .stars-badge {
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .source-tag {
+            color: var(--text-muted);
+            margin-left: auto;
+        }
+
+        .card-title-zh {
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.45;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .card-title-en {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .summary-list {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .summary-list li {
+            position: relative;
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .summary-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .card-footer {
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .tags-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+
+        .tag-chip {
+            background: var(--surface-hover);
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            padding: 0.15rem 0.45rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .tag-chip:hover {
+            text-decoration: underline;
+        }
+
+        .read-link {
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+        .read-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 4rem 1rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1 class="brand-title">🚀 AI 技術情報與趨勢週報</h1>
+                <div class="brand-sub">期間: 2026-W45 · 發布時間: 2026-11-02 · 執行模式: LIVE</div>
+            </div>
+            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                <a href="index.html" class="theme-btn" style="text-decoration: none; display: inline-flex; align-items: center;" title="返回最新週報看板首頁">🏠 最新週報</a>
+                <a href="archive.html" class="theme-btn" style="text-decoration: none; display: inline-flex; align-items: center;" title="瀏覽最近 30 天往期週報存檔目錄">📚 往期週報</a>
+                <button class="theme-btn" id="themeToggleBtn" onclick="toggleTheme()">
+                    <span id="themeIcon">☀️</span> 切換主題
+                </button>
+            </div>
+        </header>
+
+        <section class="stats-bar">
+            <div class="stat-card">
+                <span class="stat-val">3</span>
+                <span class="stat-label">本期收錄篇數</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-val">1</span>
+                <span class="stat-label">基礎模型篇數</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-val">1</span>
+                <span class="stat-label">工程實踐篇數</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-val">1</span>
+                <span class="stat-label">前沿研究篇數</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-val">0</span>
+                <span class="stat-label">業界應用篇數</span>
+            </div>
+        </section>
+
+        <section class="view-tabs-row">
+            <div class="view-tabs">
+                <button class="view-tab active" id="tabAll" onclick="setViewMode('all', this)">
+                    🌐 全部情報 (<span id="totalArticlesCount">3</span>)
+                </button>
+                <button class="view-tab" id="tabFav" onclick="setViewMode('favorites', this)">
+                    ⭐ 我的收藏 (<span id="favCount">0</span>)
+                </button>
+            </div>
+            <button class="export-fav-btn" onclick="exportFavoritesMarkdown()">
+                📥 匯出收藏為 Markdown
+            </button>
+        </section>
+
+        <section class="controls-row">
+            <div class="search-box">
+                <input type="text" id="searchInput" class="search-input" placeholder="🔍 即時搜尋標題、內容關鍵字或標籤..." oninput="handleSearch()">
+            </div>
+            <div class="category-filters">
+                <button class="filter-chip active" onclick="setCategoryFilter('all', this)">全部</button>
+                <button class="filter-chip" onclick="setCategoryFilter('基礎模型', this)">基礎模型</button>
+                <button class="filter-chip" onclick="setCategoryFilter('工程實踐', this)">工程實踐</button>
+                <button class="filter-chip" onclick="setCategoryFilter('前沿研究', this)">前沿研究</button>
+                <button class="filter-chip" onclick="setCategoryFilter('業界應用', this)">業界應用</button>
+            </div>
+        </section>
+
+        <main class="cards-grid" id="cardsGrid">
+            
+            <article class="article-card" id="card-6a2f6d12d2d7" data-id="6a2f6d12d2d7" data-category="基礎模型" data-tags="#大型語言模型 #推論加速 #MCTS #思考鏈 #開源生態" data-text="擴展推論時期運算規模：現代推理模型如何破解複雜數學難題 scaling inference-time compute: how modern reasoners solve complex math 透過思考鏈驗證、蒙地卡羅樹搜尋 (mcts) 與自我校正迴圈，推論端算力擴展展現指數級效益。 在國際數學奧林匹亞與正式形式化推理評測中取得突破性成績，逼近頂尖人類專家水準。 開源社群成功將龐大推論架構蒸餾為輕量化模型，支援在消費級本機硬體上高效部署。">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-foundation">基礎模型</span>
+                        <span class="stars-badge" title="重要度: 5 星">⭐⭐⭐⭐⭐</span>
+                        <span class="source-tag">Hugging Face Blog · 2026-10-25</span>
+                        <button class="bookmark-btn" id="bm-6a2f6d12d2d7" onclick="toggleBookmark('6a2f6d12d2d7', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">擴展推論時期運算規模：現代推理模型如何破解複雜數學難題</h3>
+                    <div class="card-title-en">Scaling Inference-Time Compute: How Modern Reasoners Solve Complex Math</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>透過思考鏈驗證、蒙地卡羅樹搜尋 (MCTS) 與自我校正迴圈，推論端算力擴展展現指數級效益。</li><li>在國際數學奧林匹亞與正式形式化推理評測中取得突破性成績，逼近頂尖人類專家水準。</li><li>開源社群成功將龐大推論架構蒸餾為輕量化模型，支援在消費級本機硬體上高效部署。</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#大型語言模型')">#大型語言模型</span><span class="tag-chip" onclick="filterByTag('#推論加速')">#推論加速</span><span class="tag-chip" onclick="filterByTag('#MCTS')">#MCTS</span><span class="tag-chip" onclick="filterByTag('#思考鏈')">#思考鏈</span><span class="tag-chip" onclick="filterByTag('#開源生態')">#開源生態</span>
+                    </div>
+                    <a href="https://huggingface.co/blog/scaling-reasoning-models" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+
+            <article class="article-card" id="card-df3508778d93" data-id="df3508778d93" data-category="前沿研究" data-tags="#Mamba #狀態空間模型 #長文本脈絡 #前沿架構 #效能最佳化" data-text="mamba-3 架構發布：結合線性注意力與狀態空間模型實現百萬長文本生成 mamba-3: linear attention meets state space models for long-context synthesis 融合選擇性狀態空間模型 (ssm) 與分塊線性注意力機制，突破長序列記憶體瓶頸。 在百萬 token 脈絡長度下維持恆定推論記憶體開銷，運算吞吐速度較傳統自我注意力提升 10 倍。 於「大海撈針」等高難度長文本擷取基準測試中達成零精準度損失的極致穩定性。">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-research">前沿研究</span>
+                        <span class="stars-badge" title="重要度: 5 星">⭐⭐⭐⭐⭐</span>
+                        <span class="source-tag">ArXiv AI · 2026-10-26</span>
+                        <button class="bookmark-btn" id="bm-df3508778d93" onclick="toggleBookmark('df3508778d93', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">Mamba-3 架構發布：結合線性注意力與狀態空間模型實現百萬長文本生成</h3>
+                    <div class="card-title-en">Mamba-3: Linear Attention meets State Space Models for Long-Context Synthesis</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>融合選擇性狀態空間模型 (SSM) 與分塊線性注意力機制，突破長序列記憶體瓶頸。</li><li>在百萬 Token 脈絡長度下維持恆定推論記憶體開銷，運算吞吐速度較傳統自我注意力提升 10 倍。</li><li>於「大海撈針」等高難度長文本擷取基準測試中達成零精準度損失的極致穩定性。</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#Mamba')">#Mamba</span><span class="tag-chip" onclick="filterByTag('#狀態空間模型')">#狀態空間模型</span><span class="tag-chip" onclick="filterByTag('#長文本脈絡')">#長文本脈絡</span><span class="tag-chip" onclick="filterByTag('#前沿架構')">#前沿架構</span><span class="tag-chip" onclick="filterByTag('#效能最佳化')">#效能最佳化</span>
+                    </div>
+                    <a href="https://arxiv.org/abs/2610.12345" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+
+            <article class="article-card" id="card-df7226da8e9d" data-id="df7226da8e9d" data-category="工程實踐" data-tags="#自主代理人 #多代理協作 #軟體工程 #CI_CD #工程實踐" data-text="正式環境中的自主軟體工程代理人：多代理協同架構與實踐模式 autonomous coding agents in production: patterns for multi-agent collaboration 提出專為企業級 ci/cd 開發流程打造的彈性通訊協定與安全沙盒隔離執行環境。 透過產品經理 (pm)、架構師、開發者與品管 (qa) 的清晰分工大幅提升複雜任務交付成功率。 建立確定性自動化驗收閘門，在無人為干預的前提下實現高品質自動化修復與產出。">
+                <div class="card-header">
+                    <div class="meta-row">
+                        <span class="category-badge badge-engineering">工程實踐</span>
+                        <span class="stars-badge" title="重要度: 4 星">⭐⭐⭐⭐</span>
+                        <span class="source-tag">Google AI Blog · 2026-10-27</span>
+                        <button class="bookmark-btn" id="bm-df7226da8e9d" onclick="toggleBookmark('df7226da8e9d', event)" title="加入個人收藏" aria-label="收藏此文章" aria-pressed="false" tabindex="0">
+                            <span class="bookmark-icon">☆</span>
+                        </button>
+                    </div>
+                    <h3 class="card-title-zh">正式環境中的自主軟體工程代理人：多代理協同架構與實踐模式</h3>
+                    <div class="card-title-en">Autonomous Coding Agents in Production: Patterns for Multi-Agent Collaboration</div>
+                </div>
+                <div class="card-body">
+                    <ul class="summary-list">
+                        <li>提出專為企業級 CI/CD 開發流程打造的彈性通訊協定與安全沙盒隔離執行環境。</li><li>透過產品經理 (PM)、架構師、開發者與品管 (QA) 的清晰分工大幅提升複雜任務交付成功率。</li><li>建立確定性自動化驗收閘門，在無人為干預的前提下實現高品質自動化修復與產出。</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="tags-group">
+                        <span class="tag-chip" onclick="filterByTag('#自主代理人')">#自主代理人</span><span class="tag-chip" onclick="filterByTag('#多代理協作')">#多代理協作</span><span class="tag-chip" onclick="filterByTag('#軟體工程')">#軟體工程</span><span class="tag-chip" onclick="filterByTag('#CI_CD')">#CI_CD</span><span class="tag-chip" onclick="filterByTag('#工程實踐')">#工程實踐</span>
+                    </div>
+                    <a href="https://blog.google/technology/ai/gemini-autonomous-agents-architecture" target="_blank" rel="noopener noreferrer" class="read-link">
+                        閱讀原文 ↗
+                    </a>
+                </div>
+            </article>
+            
+            <div class="empty-state" id="emptyState">
+                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;" id="emptyIcon">📭</div>
+                <div style="font-weight: 700; font-size: 1.15rem; margin-bottom: 0.35rem;" id="emptyTitle">無符合條件的情報</div>
+                <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem;" id="emptyDesc">嘗試更換搜尋關鍵字或分類標籤。</div>
+                <button class="filter-chip" id="emptyResetBtn" style="display:none; margin: 0 auto;" onclick="resetToAll()">返回全部情報</button>
+            </div>
+        </main>
+
+        <div id="toast" class="toast"></div>
+
+        <footer>
+            <p>© 2026 AI情報週報公司 (AI Tech Digest Hub) · 自動化研發全端交付 · 繁體中文台灣技術標準</p>
+        </footer>
+    </div>
+
+    <script>
+        const __RAW_ARTICLES__ = [{"id": "6a2f6d12d2d7", "title": "Scaling Inference-Time Compute: How Modern Reasoners Solve Complex Math", "title_zh_tw": "擴展推論時期運算規模：現代推理模型如何破解複雜數學難題", "url": "https://huggingface.co/blog/scaling-reasoning-models", "source": "Hugging Face Blog", "published_at": "2026-10-25", "summary_points": ["透過思考鏈驗證、蒙地卡羅樹搜尋 (MCTS) 與自我校正迴圈，推論端算力擴展展現指數級效益。", "在國際數學奧林匹亞與正式形式化推理評測中取得突破性成績，逼近頂尖人類專家水準。", "開源社群成功將龐大推論架構蒸餾為輕量化模型，支援在消費級本機硬體上高效部署。"], "tags": ["#大型語言模型", "#推論加速", "#MCTS", "#思考鏈", "#開源生態"], "category": "基礎模型", "stars": 5, "stars_display": "⭐⭐⭐⭐⭐"}, {"id": "df3508778d93", "title": "Mamba-3: Linear Attention meets State Space Models for Long-Context Synthesis", "title_zh_tw": "Mamba-3 架構發布：結合線性注意力與狀態空間模型實現百萬長文本生成", "url": "https://arxiv.org/abs/2610.12345", "source": "ArXiv AI", "published_at": "2026-10-26", "summary_points": ["融合選擇性狀態空間模型 (SSM) 與分塊線性注意力機制，突破長序列記憶體瓶頸。", "在百萬 Token 脈絡長度下維持恆定推論記憶體開銷，運算吞吐速度較傳統自我注意力提升 10 倍。", "於「大海撈針」等高難度長文本擷取基準測試中達成零精準度損失的極致穩定性。"], "tags": ["#Mamba", "#狀態空間模型", "#長文本脈絡", "#前沿架構", "#效能最佳化"], "category": "前沿研究", "stars": 5, "stars_display": "⭐⭐⭐⭐⭐"}, {"id": "df7226da8e9d", "title": "Autonomous Coding Agents in Production: Patterns for Multi-Agent Collaboration", "title_zh_tw": "正式環境中的自主軟體工程代理人：多代理協同架構與實踐模式", "url": "https://blog.google/technology/ai/gemini-autonomous-agents-architecture", "source": "Google AI Blog", "published_at": "2026-10-27", "summary_points": ["提出專為企業級 CI/CD 開發流程打造的彈性通訊協定與安全沙盒隔離執行環境。", "透過產品經理 (PM)、架構師、開發者與品管 (QA) 的清晰分工大幅提升複雜任務交付成功率。", "建立確定性自動化驗收閘門，在無人為干預的前提下實現高品質自動化修復與產出。"], "tags": ["#自主代理人", "#多代理協作", "#軟體工程", "#CI_CD", "#工程實踐"], "category": "工程實踐", "stars": 4, "stars_display": "⭐⭐⭐⭐"}];
+        const STORAGE_KEY = 'digest_favorites_v1';
+        let currentCategory = 'all';
+        let currentViewMode = 'all'; // 'all' or 'favorites'
+        let favoritesSet = new Set();
+        let inMemoryFallback = false;
+
+        // 安全 Storage 封裝（無痕模式防呆）
+        function loadFavorites() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    if (Array.isArray(parsed)) {
+                        favoritesSet = new Set(parsed);
+                    }
+                }
+            } catch (e) {
+                console.warn('[SafeStorage] 啟用記憶體暫存模式:', e);
+                inMemoryFallback = true;
+                if (!window.__inMemoryFavorites) window.__inMemoryFavorites = new Set();
+                favoritesSet = window.__inMemoryFavorites;
+                showToast('⚠️ 瀏覽器隱私模式已啟用，收藏記錄將於關閉分頁後清除');
+            }
+            updateFavoritesUI();
+        }
+
+        function saveFavorites() {
+            try {
+                if (!inMemoryFallback) {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(favoritesSet)));
+                }
+            } catch (e) {
+                console.warn('[SafeStorage] 寫入 LocalStorage 失敗，轉為記憶體暫存:', e);
+                inMemoryFallback = true;
+                window.__inMemoryFavorites = favoritesSet;
+            }
+            updateFavoritesUI();
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.classList.add('show');
+            clearTimeout(window.__toastTimer);
+            window.__toastTimer = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2600);
+        }
+
+        function updateFavoritesUI() {
+            // 更新計數
+            const favCountElem = document.getElementById('favCount');
+            if (favCountElem) {
+                favCountElem.innerText = favoritesSet.size;
+            }
+
+            // 更新卡片按鈕高亮
+            document.querySelectorAll('.bookmark-btn').forEach(btn => {
+                const id = btn.id.replace('bm-', '');
+                const icon = btn.querySelector('.bookmark-icon');
+                if (favoritesSet.has(id)) {
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
+                    btn.setAttribute('title', '已收藏 (點擊取消)');
+                    if (icon) icon.innerText = '⭐';
+                } else {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                    btn.setAttribute('title', '加入個人收藏');
+                    if (icon) icon.innerText = '☆';
+                }
+            });
+        }
+
+        function toggleBookmark(id, event) {
+            if (event) event.stopPropagation();
+            if (favoritesSet.has(id)) {
+                favoritesSet.delete(id);
+                showToast('已自個人收藏清單移除');
+            } else {
+                favoritesSet.add(id);
+                showToast('⭐ 成功加入個人精選收藏！');
+            }
+            saveFavorites();
+            if (currentViewMode === 'favorites') {
+                handleSearch();
+            }
+        }
+
+        function setViewMode(mode, btnElem) {
+            currentViewMode = mode;
+            document.querySelectorAll('.view-tab').forEach(t => t.classList.remove('active'));
+            if (btnElem) btnElem.classList.add('active');
+            handleSearch();
+        }
+
+        function resetToAll() {
+            currentCategory = 'all';
+            currentViewMode = 'all';
+            document.getElementById('searchInput').value = '';
+            document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+            const allChip = document.querySelector('.filter-chip');
+            if (allChip) allChip.classList.add('active');
+            const tabAll = document.getElementById('tabAll');
+            if (tabAll) setViewMode('all', tabAll);
+        }
+
+        function exportFavoritesMarkdown() {
+            if (favoritesSet.size === 0) {
+                showToast('⚠️ 目前尚未收藏任何情報，請先點擊卡片右上角 ⭐ 加入收藏！');
+                return;
+            }
+
+            const favArticles = __RAW_ARTICLES__.filter(a => favoritesSet.has(a.id));
+            if (favArticles.length === 0) {
+                showToast('⚠️ 找不到符合收藏的情報資料');
+                return;
+            }
+
+            const now = new Date();
+            const dateStr = now.toISOString().slice(0, 10);
+            const timeStr = now.toLocaleTimeString('zh-TW', { hour12: false });
+            
+            let md = `# 🌟 AI 技術情報與趨勢個人精選庫 (AI Tech Digest Favorites)\n\n`;
+            md += `> **匯出時間**：${dateStr} ${timeStr}  \n`;
+            md += `> **精選篇數**：共 ${favArticles.length} 篇重大情資  \n`;
+            md += `> **發布系統**：AI情報週報公司 (AI Tech Digest Hub)\n\n`;
+            md += `---\n\n## 📌 精選清單\n\n`;
+
+            favArticles.forEach((a, idx) => {
+                md += `### ${idx + 1}. ${a.stars_display} 【${a.category}】${a.title_zh_tw}\n\n`;
+                md += `- **英文原名**：${a.title}\n`;
+                md += `- **情報來源**：${a.source} (${a.published_at})\n`;
+                md += `- **重要評分**：${'⭐' * a.stars} (${a.stars}/5)\n`;
+                md += `- **原文連結**：[${a.url}](${a.url})\n`;
+                md += `- **核心摘要**：\n`;
+                a.summary_points.forEach(sp => {
+                    md += `  * ${sp}\n`;
+                });
+                const tagsStr = a.tags.map(t => '`' + t + '`').join(' ');
+                md += `- **關鍵標籤**：${tagsStr}\n\n---\n\n`;
+            });
+
+            md += `*本文件由 AI Tech Digest Hub 純前端本機智慧書籤模組產生，100% 離線隱私保護。*\n`;
+
+            // 純前端 Blob 下載
+            const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            const cleanDate = dateStr.replace(/-/g, '');
+            a.href = url;
+            a.download = `ai_digest_favorites_${cleanDate}.md`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast(`📥 成功下載個人精選庫 (共 ${favArticles.length} 篇)！`);
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const target = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', target);
+            try {
+                localStorage.setItem('theme_preference', target);
+            } catch (e) {}
+            updateThemeButtonText(target);
+        }
+
+        function updateThemeButtonText(theme) {
+            const icon = document.getElementById('themeIcon');
+            if (icon) icon.innerText = theme === 'dark' ? '☀️' : '🌙';
+        }
+
+        (function initTheme() {
+            let saved = null;
+            try {
+                saved = localStorage.getItem('theme_preference');
+            } catch(e) {}
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+                updateThemeButtonText(saved);
+            } else {
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = prefersDark ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+                updateThemeButtonText(theme);
+            }
+            loadFavorites();
+        })();
+
+        function setCategoryFilter(category, btnElem) {
+            currentCategory = category;
+            document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+            if (btnElem) btnElem.classList.add('active');
+            handleSearch();
+        }
+
+        function filterByTag(tag) {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.value = tag;
+            handleSearch();
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+            const cards = document.querySelectorAll('.article-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const id = card.getAttribute('data-id');
+                const cat = card.getAttribute('data-category');
+                const text = card.getAttribute('data-text');
+                const tags = card.getAttribute('data-tags').toLowerCase();
+
+                // 檢查是否符合收藏視圖
+                const matchesView = (currentViewMode === 'all') || (favoritesSet.has(id));
+                const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+                const matchesQuery = (!query || text.includes(query) || tags.includes(query));
+
+                if (matchesView && matchesCat && matchesQuery) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const emptyState = document.getElementById('emptyState');
+            const emptyTitle = document.getElementById('emptyTitle');
+            const emptyDesc = document.getElementById('emptyDesc');
+            const emptyResetBtn = document.getElementById('emptyResetBtn');
+
+            if (visibleCount === 0) {
+                emptyState.style.display = 'block';
+                if (currentViewMode === 'favorites' && favoritesSet.size === 0) {
+                    emptyTitle.innerText = '尚未加入任何個人收藏';
+                    emptyDesc.innerText = '瀏覽情報時點擊卡片右上角 ⭐ 即可隨時加入精選，方便重溫與一鍵匯出！';
+                    emptyResetBtn.style.display = 'inline-block';
+                } else {
+                    emptyTitle.innerText = '無符合篩選條件的 AI 技術情報';
+                    emptyDesc.innerText = '嘗試更換搜尋關鍵字或分類標籤。';
+                    emptyResetBtn.style.display = 'none';
+                }
+            } else {
+                emptyState.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
